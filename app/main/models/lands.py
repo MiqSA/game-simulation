@@ -1,8 +1,8 @@
 from app.main.services.manager_files import JsonFiles
-from app.main.config import *
+from app.main.config import PATH_FILES, FILENAME_LANDS, TOTAL_BOARD_POSITIONS
 import random
 
-
+files = JsonFiles(PATH_FILES, FILENAME_LANDS)
 
 
 class LandModel:
@@ -18,7 +18,6 @@ class LandModel:
 
     @classmethod
     def initialize(cls):
-        files = JsonFiles(PATH_FILES, FILENAME_LANDS)
         if files.read() is False:
             files.new()
 
@@ -26,20 +25,30 @@ class LandModel:
 
     @classmethod
     def first_conditions(cls):
-        files = JsonFiles(PATH_FILES, FILENAME_LANDS)
         data = []
 
-        for position in range(TOTAL_BOARD_POSITIONS):
+        for position in range(1, TOTAL_BOARD_POSITIONS+1):
             parameters = LandModel.parameters()
 
             parameters['board_position'] = position
-            value = int(position * 10000 + 100000 * random.random())
+            value = int(random.randint(1, 300) + random.randint(1,200) * random.random())
             parameters['sale_value'] = value
-            parameters['rent_value'] = int(0.01 * value)
-
+            parameters['rent_value'] = int(0.1 * value)
             data.append(parameters)
 
-
         files.new(data=data)
+
+    @classmethod
+    def read_lands(cls, id):
+        all_lands = files.read()
+        land = all_lands[id - 1]
+        return land
+
+
+    @classmethod
+    def update_land(cls, id, update_data):
+        all_lands = files.read()
+        all_lands[id-1] = update_data
+        files.new(data=all_lands)
 
 
