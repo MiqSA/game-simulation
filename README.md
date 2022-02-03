@@ -88,7 +88,7 @@ As condições estabelecidas pelo desafio foram cumpridas. Outras configuraçõe
 
 <strong>Possíveis melhorias:</strong>
  - Aplicação em ambiente docker. Nenhuma biblioteca externa às comuns do Python foram utilizadas. Contudo, a aplicação no ambiente docker permite escalonamento do desenvolvimento na comunidade.
- - Testes unitérios utilizando o pytest. Além de testes de performance.
+ - Testes unitários utilizando o pytest. Além de testes de performance.
  - Utilização de banco não relacional MongoDB para maior número de informações analizadas para um número maior de interações e timeout.
  - Dashboard das informações utilizando Dash da Plotly.
  - Simulação de outros jogos. A curiosidade é o limite.
