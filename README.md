@@ -51,6 +51,8 @@ com 4 diferentes tipos de possíveis jogadores. Os comportamentos definidos são
 depois de realizada a compra.
 - O jogador quatro é aleatório;
   - O jogador aleatório compra a propriedade que ele parar em cima com probabilidade de 50%.
+
+
 Caso o jogo demore muito, como é de costume em jogos dessa natureza, o jogo termina na milésima rodada
 com a vitória do jogador com mais saldo. O critério de desempate é a ordem de turno dos jogadores nesta
 partida.
@@ -64,3 +66,29 @@ Uma execução do programa proposto deve rodar 300 simulações, imprimindo no c
 - Quantos turnos em média demora uma partida;
 - Qual a porcentagem de vitórias por comportamento dos jogadores;
 - Qual o comportamento que mais vence.
+
+## Como Utilizar?
+
+```bash
+# Clonar esse repositório
+$ git clone https://github.com/MiqSA/game-simulation.git
+
+# Entrar no pasta do projeto
+$ cd game-simulation
+
+# Executar o programa
+$ python run.py
+
+# No console verifique o progresso da simulação
+# Os resultados são mostrados no final da execução
+```
+## Observações
+
+As condições estabelecidas pelo desafio foram cumpridas. Outras configurações de simulação, como o valor de cada propriedade e aluguel da mesma são geradas automaticamente pela própria aplicação.
+
+<strong>Possíveis melhorias:</strong>
+ - Aplicação em ambiente docker. Nenhuma biblioteca externa às comuns do Python foram utilizadas. Contudo, a aplicação no ambiente docker permite escalonamento do desenvolvimento na comunidade.
+ - Testes unitérios utilizando o pytest. Além de testes de performance.
+ - Utilização de banco não relacional MongoDB para maior número de informações analizadas para um número maior de interações e timeout.
+ - Dashboard das informações utilizando Dash da Plotly.
+ - Simulação de outros jogos. A curiosidade é o limite.
