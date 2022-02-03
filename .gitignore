@@ -1,1 +1,8 @@
 venv
+
+
+app/main/files
+
+__pycache__
+
+.idea
